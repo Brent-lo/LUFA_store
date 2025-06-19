@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LÜFA</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/購物車.css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-nav fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand logo-wrapper" href="./商店主頁.html">
+                <img src="./img/logo.png" alt="logo" class="rounded logo-img">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav ">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./商店主頁.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./商店主頁.html#roomA">最新飾品</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./商店主頁.html#roomB">串飾</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./商店主頁.html#roomC">手鏈</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./商店主頁.html#roomD">項鏈與吊墜</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./商店主頁.html#roomE">戒指</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-cart-fill"></i>
+                            <span>購物車</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="loginBtn" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle"></i>
+                            <span> 登入</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./購物車.html">我的訂單</a></li>
+                            <li><a class="dropdown-item" href="#">會員資料</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item text-danger" href="#" id="logoutBtn">登出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 購物車進度表 -->
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-3 px-0 ">
+                <!-- top area(no. and progress) -->
+                <div class="position-relative">
+                    <div
+                        class="circle-w-h mx-auto bg-cart text-white rounded-circle d-flex justify-content-center align-items-center">
+                        1
+                    </div>
+                    <div class="progress progress-w-h position-absolute position-progress">
+                        <div class="progress-bar bg-cart" role="progressbar" aria-label="Basic example"
+                            style="width: 33%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                <!--no.1 text area -->
+                <div class="p-2">確認購物車</div>
+            </div>
+            <div class="col-3 px-0 ">
+                <div class="position-relative">
+                    <div
+                        class="circle-w-h mx-auto bg-cart text-white rounded-circle d-flex justify-content-center align-items-center">
+                        2
+                    </div>
+                    <div class="progress progress-w-h position-absolute position-progress">
+                        <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: 0%"
+                            aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                <div class="p-2">付款與運送方式</div>
+            </div>
+            <div class="col-3 px-0 ">
+                <div class="position-relative">
+                    <div
+                        class="circle-w-h mx-auto bg-cart text-white rounded-circle d-flex justify-content-center align-items-center">
+                        3
+                    </div>
+                    <div class="progress progress-w-h position-absolute position-progress">
+                        <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: 0%"
+                            aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                <div class="p-2">填寫資料</div>
+            </div>
+            <div class="col-3 px-0 ">
+                <div class="position-relative">
+                    <div
+                        class="circle-w-h mx-auto bg-cart text-white rounded-circle d-flex justify-content-center align-items-center">
+                        4
+                    </div>
+
+                </div>
+                <div class="p-2">完成訂單</div>
+            </div>
+        </div>
+    </div>
+    <!-- 商品計算========= -->
+    <div class="container my-5">
+        <h3 class="mb-4">購物車商品列表</h3>
+
+        <!-- 表頭列 -->
+        <div class="row border-bottom mb-3 pb-2" id="total-good">
+            <div class="col text-start fw-bold ms-5">商品</div>
+            <div class="col text-end fw-bold me-5">小計</div>
+        </div>
+
+        <!--之後會由 JS 插入卡片 -->
+        <!-- 範例(連接"購物車-1-無連結主頁.js"):商品卡片 1 -->
+        <!-- <div class="card mb-3">
+            <div class="row g-0 align-items-center">
+
+                <div class="col-3">
+                    <img src="https://picsum.photos/1920/1080/?random=1" class="img-fluid rounded-start" alt="商品圖片">
+                </div>
+                <div class="col-4">
+                    <div class="card-body">
+                        <h5 class="card-title mb-0">商品名稱 A</h5>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="d-flex align-items-center justify-content-center">
+                        <button class="btn btn-outline-secondary btn-sm me-2 btn-minus">-</button>
+                        <span class="item-quantity">1</span>
+                        <button class="btn btn-outline-secondary btn-sm ms-2 btn-plus">+</button>
+                    </div>
+                </div>
+                <div class="col-2 d-flex align-items-center">
+                    <div class="item-price fw-bold" data-price="299">$299</div>
+                    <button class="btn btn-sm btn-outline-danger btn-delete ms-5">
+                        <i class="bi bi-trash3"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div> -->
+
+        <!-- 總金額 -->
+        <div class="text-end fw-bold fs-5 mt-5 pt-5 pe-5 border-top" id="total-price">總金額：$</div>
+
+        <!-- 結帳按鈕 -->
+        <div class="text-end mt-3 pe-5">
+            <a href="付款與運送方式.html" class="btn btn-primary px-4 py-2 bg-black">結帳</a>
+        </div>
+    </div>
+
+
+    <!-- ========footer========== -->
+    <div class="container">
+        <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 mt-5 border-top">
+            <div class="col mb-1">
+                <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none"
+                    aria-label="Bootstrap">
+                    <img src="./img/avatar.jfif" alt="" style="width: 100px;">
+                </a>
+                <p class="text-body-secondary">&copy; 2025</p>
+            </div>
+
+            <div class="col mb-1">
+                <h5>Section</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                </ul>
+            </div>
+
+            <div class="col mb-1">
+                <h5>Section</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                </ul>
+            </div>
+
+            <div class="col mb-1">
+                <h5>Section</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                </ul>
+            </div>
+
+            <div class="col mb-1">
+                <h5>Section</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                </ul>
+            </div>
+        </footer>
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <div class="col-md-4 d-flex align-items-center">
+                <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1"
+                    aria-label="Bootstrap">
+                    <i class="bi bi-twitter-x"></i>
+                </a>
+                <span class="mb-3 mb-md-0 text-body-secondary">&copy; 2025 Company, Inc</span>
+            </div>
+
+            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                <li class="ms-3"><a class="text-body-secondary" href="#" aria-label="Instagram"><i
+                            class="bi bi-twitter-x"></i></a></li>
+                <li class="ms-3"><a class="text-body-secondary" href="#" aria-label="Facebook"><i
+                            class="bi bi-meta"></i></a></li>
+            </ul>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+    <!-- <script src="購物車-1-無連結主頁.js"></script> -->
+    <script src="./js/購物車-2-連結主頁.js"></script>
+</body>
+
+</html>

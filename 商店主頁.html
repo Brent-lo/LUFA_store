@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LÜFA</title>
+    <!-- 引入css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./css/商品主頁.css">
+</head>
+
+<body>
+    <!-- 改首頁的輪播把左右刪掉 -->
+     <!-- 購物車加入 不跳轉 -->
+    <nav class="navbar navbar-expand-lg bg-nav fixed-top ">
+        <div class="container-fluid">
+            <a class="navbar-brand logo-wrapper" href="#">
+                <img src="./img/logo.png" alt="logo" class="rounded logo-img">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav ">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#roomA">最新飾品</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#roomB">串飾</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#roomC">手鏈</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#roomD">項鏈與吊墜</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#roomE">戒指</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./購物車.html">
+                            <i class="bi bi-cart-fill"></i>
+                            <span>購物車</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="loginBtn" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle"></i>
+                            <span> 登入</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./購物車.html">我的訂單</a></li>
+                            <li><a class="dropdown-item" href="#">會員資料</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item text-danger" href="#" id="logoutBtn">登出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- header -->
+    <section id="lokiSlider" class="carousel slide carousel-fade" data-bss-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#lokiSlider" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#lokiSlider" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#lokiSlider" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#lokiSlider" data-bs-slide-to="3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item vh-100 active">
+                <img src="https://picsum.photos/1920/1080/?random=1" class="b-block w-100 h-100">
+                <div class="carousel-caption top-0 bottom-0 d-flex flex-column justify-content-center">
+                    <h1>Born Again, Beautiful Again</h1>
+                    <p class="d-none d-md-block">Every piece has a past.<br>Every design gives it new life.</p>
+                </div>
+            </div>
+            <div class="carousel-item vh-100">
+                <img src="https://picsum.photos/1920/1080/?random=2" class="b-block w-100 h-100">
+                <div class="carousel-caption top-0 bottom-0 d-flex flex-column justify-content-center">
+                    <h1>Wear the Earth Lightly</h1>
+                    <p class="d-none d-md-block">From sea glass to silver thread,<br>
+                        crafted gently for a lighter world.</p>
+                </div>
+            </div>
+            <div class="carousel-item vh-100">
+                <img src="https://picsum.photos/1920/1080/?random=3" class="b-block w-100 h-100">
+                <div class="carousel-caption top-0 bottom-0 d-flex flex-column justify-content-center">
+                    <h1> Nature. Nurtured. Worn.</h1>
+                    <p class="d-none d-md-block">Sustainable stories sculpted by hand,<br>
+                        for those who cherish the quiet beauty.</p>
+                </div>
+            </div>
+            <div class="carousel-item vh-100">
+                <img src="https://picsum.photos/1920/1080/?random=4" class="b-block w-100 h-100">
+                <div class="carousel-caption top-0 bottom-0 d-flex flex-column justify-content-center">
+                    <h1>Less Waste, More Wonder</h1>
+                    <p class="d-none d-md-block">We transform yesterday’s fragments<br>
+                        into tomorrow’s treasures.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#lokiSlider" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#lokiSlider" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </section>
+    <!-- ============================================= -->
+    <!-- 第一區 -->
+    <!--產品理念區塊 -->
+    <div class="container my-5 py-5">
+        <h2 class="text-center mb-4">🌿 產品理念 / Product Philosophy</h2>
+        <div class="row align-items-center shadow-sm rounded p-4 bg-light">
+            <div class="col-md-6 mb-3 mb-md-0">
+                <img src="https://picsum.photos/1920/1080/?random=4" class="img-fluid rounded"
+                    alt="Recycled jewelry concept image">
+            </div>
+            <div class="col-md-6">
+                <p class="mb-3">我們相信，每一件飾品都值得擁有第二次生命。<br>
+                    透過回收金屬與海廢玻璃，我們將被遺忘的材料轉化為值得珍藏的作品。<strong>LÜFA</strong>
+                    堅持以手工慢工打造每一件飾品，賦予它獨特的故事與靈魂，也讓佩戴者與地球之間建立一段溫柔的連結。</p>
+                    <br>
+                <p>We believe every piece deserves a second life.<br>
+                    Using recycled metals and ocean-found glass, we transform forgotten materials into meaningful
+                    treasures. At <strong>LÜFA</strong>, every piece is crafted slowly by hand, carrying a story, a
+                    soul, and a gentle connection between you and the Earth.</p>
+            </div>
+        </div>
+    </div>
+    <!--創始人的故事區塊 -->
+    <div class="container my-5 py-5">
+        <h2 class="text-center mb-4">🧵 創始人的故事 / The Founder’s Story</h2>
+        <div class="row align-items-center shadow-sm rounded p-4 bg-white">
+            <div class="col-md-6">
+                <p class="mb-3">一枚破碎的海玻璃，讓我重新看見「廢棄」的價值。<br>
+                    某次海邊散步時，我撿起一塊磨圓的玻璃碎片。它曾是垃圾，卻因海水的淬鍊，變得溫潤且獨一無二。那一刻，我開始思考：如果被丟棄的材料，也能重生為值得珍藏的飾品呢？<br>
+                    於是，我創立了 <strong>LÜFA</strong> —— 一個讓時間與雙手賦予材料第二次生命的品牌。</p>
+                    <br>
+                <p>It all began with a single piece of sea glass.<br>
+                    One quiet walk by the shore, I found a rounded shard of glass softened by the ocean. Once discarded,
+                    it had been reshaped by nature into something beautiful. That moment changed how I saw waste — not
+                    as an end, but as a beginning.<br>
+                    And so I founded <strong>LÜFA</strong>: a jewelry brand where forgotten materials are given a second
+                    life through time, care, and craft.</p>
+            </div>
+            <div class="col-md-6">
+                <img src="https://picsum.photos/1920/1080/?random=5" class="img-fluid rounded"
+                    alt="Sea glass inspiration image">
+            </div>
+        </div>
+    </div>
+
+    <!-- 第二區 -->
+    <section id="lokiRoom" class="container py-5">
+        <header class="text-start">
+            <h2 class=" pb-5">產品介紹</h2>
+            <!-- 產品列 -->
+            <nav class="nav nav-tabs flex-nowrap justify-content-around">
+                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#roomA" type="button">最新飾品</button>
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#roomB" type="button">串飾</button>
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#roomC" type="button">手鏈</button>
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#roomD" type="button">項鏈與吊墜</button>
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#roomE" type="button">戒指</button>
+            </nav>
+        </header>
+        <!-- 產品細節展示 -->
+        <article class="tab-content py-5">
+            <!-- 第一區 -->
+            <div class="tab-pane fade show active" id="roomA">
+                <!-- 產品1：圖片左 -->
+                <div class="d-flex flex-row row mb-5">
+                    <div class="image-col">
+                        <img src="./img/product/A1.jpg" alt="產品1圖">
+                    </div>
+                    <div class="text-col">
+                        <h3>產品標題 1</h3>
+                        <p>這是產品 1 的介紹內容，簡單說明商品的特色與用途。</p>
+                        <button class="btn  btn-add-to-cart " data-id="011" data-name="商品名稱 A-1" data-price="299"
+                            data-img="./img/product/A1.jpg">
+                            加入購物車
+                        </button>
+                    </div>
+                </div>
+                <!-- 產品2：圖片右 -->
+                <div class="d-flex flex-row-reverse row mb-5">
+                    <div class="image-col">
+                        <img src="./img/product/B1.jpg" alt="產品2圖">
+                    </div>
+                    <div class="text-col">
+                        <h3>產品標題 2</h3>
+                        <p>這是產品 2 的介紹內容，包含設計靈感與材質介紹。</p>
+                        <button class="btn  btn-add-to-cart " data-id="021" data-name="商品名稱 B-1" data-price="299"
+                            data-img="./img/product/B1.jpg">
+                            加入購物車
+                        </button>
+                    </div>
+                </div>
+                <!-- 產品3：圖片左 -->
+                <div class="d-flex flex-row row mb-5">
+                    <div class="image-col">
+                        <img src="./img/product/C1.jpg" alt="產品1圖">
+                    </div>
+                    <div class="text-col">
+                        <h3>產品標題 3</h3>
+                        <p>這是產品 3 的介紹內容，簡單說明商品的特色與用途。</p>
+                        <button class="btn  btn-add-to-cart " data-id="031" data-name="商品名稱 C-1" data-price="299"
+                            data-img="./img/product/C1.jpg">
+                            加入購物車
+                        </button>
+                    </div>
+                </div>
+                <!-- 產品4：圖片右 -->
+                <div class="d-flex flex-row-reverse row mb-5">
+                    <div class="image-col">
+                        <img src="./img/product/D1.jpg" alt="產品2圖">
+                    </div>
+                    <div class="text-col">
+                        <h3>產品標題 4</h3>
+                        <p>這是產品 4 的介紹內容，包含設計靈感與材質介紹。</p>
+                        <button class="btn  btn-add-to-cart " data-id="041" data-name="商品名稱 D-1" data-price="299"
+                            data-img="./img/product/D1.jpg">
+                            加入購物車
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- 第二區 -->
+            <div class="tab-pane fade" id="roomB">
+                <!-- 產品1：圖片左 -->
+                <div class="d-flex flex-row row mb-5">
+                    <div class="image-col">
+                        <img src="./img/product/A1.jpg" alt="產品1圖">
+                    </div>
+                    <div class="text-col">
+                        <h3>產品標題 1</h3>
+                        <p>這是產品 1 的介紹內容，簡單說明商品的特色與用途。</p>
+                        <button class="btn  btn-add-to-cart " data-id="011" data-name="商品名稱 A-1" data-price="299"
+                            data-img="./img/product/A1.jpg">
+                            加入購物車
+                        </button>
+                    </div>
+                </div>
+                <!-- 產品2：圖片右 -->
+                <div class="d-flex flex-row-reverse row mb-5">
+                    <div class="image-col">
+                        <img src="./img/product/A2.jpg" alt="產品2圖">
+                    </div>
+                    <div class="text-col">
+                        <h3>產品標題 2</h3>
+                        <p>這是產品 2 的介紹內容，包含設計靈感與材質介紹。</p>
+                        <button class="btn  btn-add-to-cart " data-id="012" data-name="商品名稱 A-2" data-price="299"
+                            data-img="./img/product/A2.jpg">
+                            加入購物車
+                        </button>
+                    </div>
+                </div>
+                <!-- 產品3：圖片左 -->
+                <div class="d-flex flex-row row mb-5">
+                    <div class="image-col">
+                        <img src="./img/product/A3.jpg" alt="產品1圖">
+                    </div>
+                    <div class="text-col">
+                        <h3>產品標題 3</h3>
+                        <p>這是產品 3 的介紹內容，簡單說明商品的特色與用途。</p>
+                        <button class="btn  btn-add-to-cart " data-id="013" data-name="商品名稱 A-3" data-price="299"
+                            data-img="./img/product/A3.jpg">
+                            加入購物車
+                        </button>
+                    </div>
+                </div>
+                <!-- 產品4：圖片右 -->
+                <div class="d-flex flex-row-reverse row mb-5">
+                    <div class="image-col">
+                        <img src="./img/product/A4.jpg" alt="產品2圖">
+                    </div>
+                    <div class="text-col">
+                        <h3>產品標題 4</h3>
+                        <p>這是產品 4 的介紹內容，包含設計靈感與材質介紹。</p>
+                        <button class="btn  btn-add-to-cart " data-id="014" data-name="商品名稱 A-4" data-price="299"
+                            data-img="./img/product/A4.jpg">
+                            加入購物車
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- 第三區 -->
+            <div class="tab-pane fade" id="roomC">
+                <!-- 產品1：圖片左 -->
+                <div class="d-flex flex-row row mb-5">
+                    <div class="image-col">
+                        <img src="./img/product/B1.jpg" alt="產品1圖">
+                    </div>
+                    <div class="text-col">
+                        <h3>產品標題 1</h3>
+                        <p>這是產品 1 的介紹內容，簡單說明商品的特色與用途。</p>
+                        <button class="btn  btn-add-to-cart " data-id="021" data-name="商品名稱 B-1" data-price="299"
+                            data-img="./img/product/B1.jpg">
+                            加入購物車
+                        </button>
+                    </div>
+                </div>
+                <!-- 產品2：圖片右 -->
+                <div class="d-flex flex-row-reverse row mb-5">
+                    <div class="image-col">
+                        <img src="./img/product/B2.jpg" alt="產品2圖">
+                    </div>
+                    <div class="text-col">
+                        <h3>產品標題 2</h3>
+                        <p>這是產品 2 的介紹內容，包含設計靈感與材質介紹。</p>
+                        <button class="btn  btn-add-to-cart " data-id="022" data-name="商品名稱 B-2" data-price="299"
+                            data-img="./img/product/B2.jpg">
+                            加入購物車
+                        </button>
+                    </div>
+                </div>
+                <!-- 產品3：圖片左 -->
+                <div class="d-flex flex-row row mb-5">
+                    <div class="image-col">
+                        <img src="./img/product/B3.jpg" alt="產品1圖">
+                    </div>
+                    <div class="text-col">
+                        <h3>產品標題 3</h3>
+                        <p>這是產品 3 的介紹內容，簡單說明商品的特色與用途。</p>
+                        <button class="btn  btn-add-to-cart " data-id="023" data-name="商品名稱 B-3" data-price="299"
+                            data-img="./img/product/B3.jpg">
+                            加入購物車
+                        </button>
+                    </div>
+                </div>
+                <!-- 產品4：圖片右 -->
+                <div class="d-flex flex-row-reverse row mb-5">
+                    <div class="image-col">
+                        <img src="./img/product/B4.jpg" alt="產品2圖">
+                    </div>
+                    <div class="text-col">
+                        <h3>產品標題 4</h3>
+                        <p>這是產品 4 的介紹內容，包含設計靈感與材質介紹。</p>
+                        <button class="btn  btn-add-to-cart " data-id="024" data-name="商品名稱 B-4" data-price="299"
+                            data-img="./img/product/B4.jpg">
+                            加入購物車
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- 第四區 -->
+            <div class="tab-pane fade" id="roomD">
+                <!-- 產品1：圖片左 -->
+                <div class="d-flex flex-row row mb-5">
+                    <div class="image-col">
+                        <img src="./img/product/C1.jpg" alt="產品1圖">
+                    </div>
+                    <div class="text-col">
+                        <h3>產品標題 1</h3>
+                        <p>這是產品 1 的介紹內容，簡單說明商品的特色與用途。</p>
+                        <button class="btn  btn-add-to-cart " data-id="031" data-name="商品名稱 C-1" data-price="299"
+                            data-img="./img/product/C1.jpg">
+                            加入購物車
+                        </button>
+                    </div>
+                </div>
+                <!-- 產品2：圖片右 -->
+                <div class="d-flex flex-row-reverse row mb-5">
+                    <div class="image-col">
+                        <img src="./img/product/C2.jpg" alt="產品2圖">
+                    </div>
+                    <div class="text-col">
+                        <h3>產品標題 2</h3>
+                        <p>這是產品 2 的介紹內容，包含設計靈感與材質介紹。</p>
+                        <button class="btn  btn-add-to-cart " data-id="032" data-name="商品名稱 C-2" data-price="299"
+                            data-img="./img/product/C2.jpg">
+                            加入購物車
+                        </button>
+                    </div>
+                </div>
+                <!-- 產品3：圖片左 -->
+                <div class="d-flex flex-row row mb-5">
+                    <div class="image-col">
+                        <img src="./img/product/C3.jpg" alt="產品1圖">
+                    </div>
+                    <div class="text-col">
+                        <h3>產品標題 3</h3>
+                        <p>這是產品 3 的介紹內容，簡單說明商品的特色與用途。</p>
+                        <button class="btn  btn-add-to-cart " data-id="033" data-name="商品名稱 C-3" data-price="299"
+                            data-img="./img/product/C3.jpg">
+                            加入購物車
+                        </button>
+                    </div>
+                </div>
+                <!-- 產品4：圖片右 -->
+                <div class="d-flex flex-row-reverse row mb-5">
+                    <div class="image-col">
+                        <img src="./img/product/C4.jpg" alt="產品2圖">
+                    </div>
+                    <div class="text-col">
+                        <h3>產品標題 4</h3>
+                        <p>這是產品 4 的介紹內容，包含設計靈感與材質介紹。</p>
+                        <button class="btn  btn-add-to-cart " data-id="034" data-name="商品名稱 C-4" data-price="299"
+                            data-img="./img/product/C4.jpg">
+                            加入購物車
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- 第五區 -->
+            <div class="tab-pane fade" id="roomE">
+                <!-- 產品1：圖片左 -->
+                <div class="d-flex flex-row row mb-5">
+                    <div class="image-col">
+                        <img src="./img/product/D1.jpg" alt="產品1圖">
+                    </div>
+                    <div class="text-col">
+                        <h3>產品標題 1</h3>
+                        <p>這是產品 1 的介紹內容，簡單說明商品的特色與用途。</p>
+                        <button class="btn  btn-add-to-cart " data-id="041" data-name="商品名稱 D-1" data-price="299"
+                            data-img="./img/product/D1.jpg">
+                            加入購物車
+                        </button>
+                    </div>
+                </div>
+                <!-- 產品2：圖片右 -->
+                <div class="d-flex flex-row-reverse row my-5">
+                    <div class="image-col">
+                        <img src="./img/product/D2.jpg" alt="產品2圖">
+                    </div>
+                    <div class="text-col">
+                        <h3>產品標題 2</h3>
+                        <p>這是產品 2 的介紹內容，包含設計靈感與材質介紹。</p>
+                        <button class="btn  btn-add-to-cart " data-id="042" data-name="商品名稱 D-2" data-price="299"
+                            data-img="./img/product/D2.jpg">
+                            加入購物車
+                        </button>
+                    </div>
+                </div>
+                <!-- 產品3：圖片左 -->
+                <div class="d-flex flex-row row my-5">
+                    <div class="image-col">
+                        <img src="./img/product/D3.jpg" alt="產品1圖">
+                    </div>
+                    <div class="text-col">
+                        <h3>產品標題 3</h3>
+                        <p>這是產品 3 的介紹內容，簡單說明商品的特色與用途。</p>
+                        <button class="btn  btn-add-to-cart " data-id="043" data-name="商品名稱 D-3" data-price="299"
+                            data-img="./img/product/D3.jpg">
+                            加入購物車
+                        </button>
+                    </div>
+                </div>
+                <!-- 產品4：圖片右 -->
+                <div class="d-flex flex-row-reverse row my-5">
+                    <div class="image-col">
+                        <img src="./img/product/D4.jpg" alt="產品2圖">
+                    </div>
+                    <div class="text-col">
+                        <h3>產品標題 4</h3>
+                        <p>這是產品 4 的介紹內容，包含設計靈感與材質介紹。</p>
+                        <button class="btn  btn-add-to-cart " data-id="044" data-name="商品名稱 D-4" data-price="299"
+                            data-img="./img/product/D4.jpg">
+                            加入購物車
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section>
+    <!-- footer ================================ -->
+    <div class="container">
+        <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 mt-5 border-top">
+            <div class="col mb-1">
+                <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none"
+                    aria-label="Bootstrap">
+                    <img src="./img/avatar.jfif" alt="avator" style="width: 100px;">
+                </a>
+                <p class="text-body-secondary">&copy; 2025</p>
+            </div>
+
+
+
+            <div class="col mb-1">
+                <h5>Section</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                </ul>
+            </div>
+
+            <div class="col mb-1">
+                <h5>Section</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                </ul>
+            </div>
+
+            <div class="col mb-1">
+                <h5>Section</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                </ul>
+            </div>
+
+            <div class="col mb-1">
+                <h5>Section</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                </ul>
+            </div>
+        </footer>
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <div class="col-md-4 d-flex align-items-center">
+                <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1"
+                    aria-label="Bootstrap">
+                    <i class="bi bi-twitter-x"></i>
+                </a>
+                <span class="mb-3 mb-md-0 text-body-secondary">&copy; 2025 Company, Inc</span>
+            </div>
+
+            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                <li class="ms-3"><a class="text-body-secondary" href="#" aria-label="Instagram"><i
+                            class="bi bi-twitter-x"></i></a></li>
+                <li class="ms-3"><a class="text-body-secondary" href="#" aria-label="Facebook"><i
+                            class="bi bi-meta"></i></a></li>
+            </ul>
+        </footer>
+    </div>
+    <!-- ================== -->
+    <!-- 引入程式 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+
+    <script src="./js/主頁.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+        /* 主色調 */
+        :root {
+            --main-bg: #f3ede5;
+            /* 淺綠背景 */
+            --accent1: #642171;
+            /* 深綠 */
+            --accent2: #A3509E;
+            /* 亮紫 */
+            --accent2-dark: #b359b3;
+            /* 深紫 */
+        }
+
+        body {
+            padding-top: 100px;
+        }
+
+        /* ================== */
+        /* LOGO 圖片比例不變，固定高度 */
+        .logo-wrapper {
+            width: 170px;
+            height: 50px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-img {
+            height: auto;
+            width: 100%;
+        }
+
+        .bg-nav {
+            background-color: #f3ede5;
+        }
+
+        .navbar .nav-link:hover {
+            background-color: var(--accent1);
+            color: white;
+            border-radius: 0.3rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-toggle::after {
+            display: none;
+        }
+
+        /* =========================================== */
+        .circle-w-h {
+            width: 40px;
+            height: 40px;
+            /* z-index: 99; */
+        }
+
+        .progress-w-h {
+            width: 60%;
+            height: 10px;
+            /* z-index: 1; */
+        }
+
+        .position-progress {
+            left: 100%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .bg-cart {
+            background-color: #642171;
+        }
+
+        .card img {
+            width: 100%;
+            height: 380px;
+            padding: 0;
+
+        }

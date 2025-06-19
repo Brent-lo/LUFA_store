@@ -1,0 +1,137 @@
+/* 主色調 */
+:root {
+    --main-bg: #f3ede5;
+    /* 淺綠背景 */
+    --accent1: #642171;
+    /* 深綠 */
+    --accent2: #A3509E;
+    /* 亮紫 */
+    --accent2-dark: #b359b3;
+    /* 深紫 */
+}
+
+
+/* ================== */
+/* LOGO 圖片比例不變，固定高度 */
+.logo-wrapper {
+    width: 170px;
+    height: 50px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-img {
+    height: auto;
+    width: 100%;
+}
+
+.bg-nav {
+    background-color: #f3ede5;
+}
+
+.navbar .nav-link:hover {
+    background-color: var(--accent1) !important;
+    color: white !important;
+    border-radius: 0.3rem;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+/* ================== */
+#lokiSlider img {
+    object-fit: cover;
+    filter: grayscale(50%);
+}
+
+#lokiSlider .carousel-caption {
+    text-shadow: #33532f 0.3rem 0.3rem 0.5rem;
+}
+
+#lokiSlider .carousel-indicators>button {
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+    border: 10px solid transparent;
+    background-color: var(--accent2);
+}
+
+/**********lokiRoom************/
+#lokiRoom nav>.nav-link {
+    flex: 0 1 15%;
+    box-shadow: 1px -1px 5px 0px #505050;
+    color: var(--accent1);
+    background-color: var(--main-bg);
+    border: 0;
+}
+
+#lokiRoom nav>.nav-link.active {
+    background-color: var(--accent2);
+    color: #ffffff;
+}
+
+#lokiRoom nav.nav-tabs,
+#lokiRoom nav>.nav-link {
+    border-bottom: 1px solid var(--accent2);
+}
+
+/* 為所有 id 以 room 開頭的元素 在滾動時保留上邊距(不然nav會蓋住)*/
+[id^="room"] {
+    scroll-margin-top: 178px;
+}
+
+
+
+
+/* tab 產品內容區塊 */
+.tab-pane .row {
+    background-color: var(--main-bg);
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(51, 83, 47, 0.2);
+}
+
+.tab-pane .image-col {
+    width: 40%;
+    height: 400px;
+    padding: 0;
+}
+
+.tab-pane .image-col img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tab-pane .text-col {
+    width: 60%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.tab-pane .text-col h3 {
+    color: var(--accent1);
+}
+
+.tab-pane .text-col p {
+    color: #2f2f2f;
+}
+
+.tab-pane .btn-add-to-cart {
+    background-color: var(--accent2);
+    color: white;
+    border: none;
+    width: 40%;
+}
+
+.tab-pane .btn-add-to-cart:hover {
+    background-color: var(--accent2-dark);
+}

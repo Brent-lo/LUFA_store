@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <style>
+        /* 主色調 */
+        :root {
+            --main-bg: #f3ede5;
+            /* 淺綠背景 */
+            --accent1: #642171;
+            /* 深綠 */
+            --accent2: #A3509E;
+            /* 亮紫 */
+            --accent2-dark: #b359b3;
+            /* 深紫 */
+        }
+
+        /* ================== */
+        /* LOGO 圖片比例不變，固定高度 */
+        .logo-wrapper {
+            width: 170px;
+            height: 50px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-img {
+            height: auto;
+            width: 100%;
+        }
+
+        .bg-nav {
+            background-color: #f3ede5;
+        }
+
+        .navbar .nav-link:hover {
+            background-color: var(--accent1) !important;
+            color: white !important;
+            border-radius: 0.3rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-toggle::after {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-nav fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand logo-wrapper" href="#">
+                <img src="./img/logo.png" alt="logo" class="rounded logo-img">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav ">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">最新飾品</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">串飾</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">手鏈</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">項鏈與吊墜</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">戒指</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-cart-fill"></i>
+                            <span>購物車</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="loginBtn" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle"></i>
+                            <span> 登入</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 mt-5 border-top">
+            <div class="col mb-1">
+                <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none"
+                    aria-label="Bootstrap">
+                    <img src="./img/avatar.jfif" alt="" style="width: 100px;">
+                </a>
+                <p class="text-body-secondary">&copy; 2025</p>
+            </div>
+
+
+
+            <div class="col mb-1">
+                <h5>Section</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                </ul>
+            </div>
+
+            <div class="col mb-1">
+                <h5>Section</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                </ul>
+            </div>
+
+            <div class="col mb-1">
+                <h5>Section</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                </ul>
+            </div>
+
+            <div class="col mb-1">
+                <h5>Section</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <div class="col-md-4 d-flex align-items-center">
+                <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1"
+                    aria-label="Bootstrap">
+                    <i class="bi bi-twitter-x"></i>
+                </a>
+                <span class="mb-3 mb-md-0 text-body-secondary">&copy; 2025 Company, Inc</span>
+            </div>
+
+            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                <li class="ms-3"><a class="text-body-secondary" href="#" aria-label="Instagram"><i
+                            class="bi bi-twitter-x"></i></a></li>
+                <li class="ms-3"><a class="text-body-secondary" href="#" aria-label="Facebook"><i
+                            class="bi bi-meta"></i></a></li>
+            </ul>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+    <!-- 登入與否 -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const loginBtn = document.getElementById("loginBtn");
+            const isLoggedIn = false; // 模擬登入狀態，可改為 true 表示已登入
+
+            if (!isLoggedIn) {
+                loginBtn.addEventListener("click", function (e) {
+                    e.preventDefault(); // 防止 dropdown 展開
+                    window.location.href = "./登入頁面.html";
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
