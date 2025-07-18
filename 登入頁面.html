@@ -39,7 +39,7 @@
     <!-- nav導覽列 -->
     <nav class="navbar navbar-expand-lg bg-nav fixed-top p-0">
         <div class="container-fluid">
-            <a class="navbar-brand logo-wrapper" href="商店主頁.html">
+            <a class="navbar-brand logo-wrapper" href="index.html">
                 <img src="./img/logo.png" alt="logo" class="rounded logo-img">
             </a>
         </div>
@@ -190,13 +190,13 @@
         document.getElementById("loginForm").addEventListener("submit", function (e) {
             e.preventDefault();
             localStorage.setItem("isLoggedIn", true);
-            window.location.href = "./商店主頁.html";
+            window.location.href = "./index.html";
         });
 
         document.getElementById("registerForm").addEventListener("submit", function (e) {
             e.preventDefault();
             localStorage.setItem("isLoggedIn", true);
-            window.location.href = "./商店主頁.html";
+            window.location.href = "./index.html";
         });
     </script>
 </body>

@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
             container.innerHTML = `
                 <div class="text-center py-5">
                     <h4 class="mb-4">目前您尚未選擇商品</h4>
-                    <a href="商店主頁.html" class="btn btn-primary">去主頁逛逛</a>
+                    <a href="index.html" class="btn btn-primary">去主頁逛逛</a>
                 </div>
             `;
             localStorage.removeItem("cart");
