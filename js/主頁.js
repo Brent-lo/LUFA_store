@@ -1,7 +1,7 @@
+
 document.addEventListener("DOMContentLoaded", function () {
     // ===============判斷是否已經登入=================
     const loginBtn = document.getElementById("loginBtn");
-    const dropdownMenu = loginBtn?.nextElementSibling; //loginBtn? => 如果loginBtn存在的話就執行後面的
     const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 
     if (isLoggedIn) {
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
         logoutBtn?.addEventListener("click", function (e) {
             e.preventDefault();
             localStorage.removeItem("isLoggedIn");
-            location.reload(); // 或跳轉回登入頁面
+            location.reload();
         });
     } else {
         // 未登入：點擊導向登入頁面
@@ -23,67 +23,197 @@ document.addEventListener("DOMContentLoaded", function () {
             window.location.href = "./登入頁面.html";
         });
     }
+
+    // =============== LÜFA 商品動態載入 START ===============
+    const categoryTabs = document.querySelectorAll('.nav-link[data-bs-toggle="tab"]');
+    if (categoryTabs.length > 0) {
+        let currentPage = 1;
+        const productsPerPage = 6;
+        let currentCategory = 'all'; // 預設顯示所有商品
+
+        const getFilteredProducts = () => {
+            const categoryMap = {
+                '#roomA': 'all',
+                '#roomB': '串飾',
+                '#roomC': '手鍊',
+                '#roomD': '項鍊與吊墜',
+                '#roomE': '戒指'
+            };
+            const activeTabSelector = document.querySelector('.nav-link.active[data-bs-toggle="tab"]')?.getAttribute('data-bs-target');
+            currentCategory = categoryMap[activeTabSelector] || 'all';
+
+            if (currentCategory === 'all') {
+                return products;
+            }
+            return products.filter(p => p.category === currentCategory);
+        };
+
+        const addCartButtonListeners = () => {
+            document.querySelectorAll('.btn-add-to-cart').forEach(btn => {
+                // 先移除舊的監聽器，避免重複綁定
+                const newBtn = btn.cloneNode(true);
+                btn.parentNode.replaceChild(newBtn, btn);
+
+                newBtn.addEventListener('click', function () {
+                    const id = newBtn.dataset.id;
+                    const name = newBtn.dataset.name;
+                    const price = parseInt(newBtn.dataset.price, 10);
+                    const img = newBtn.dataset.img;
+
+                    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                    const existing = cart.find(item => item.id === id);
+
+                    if (existing) {
+                        existing.quantity += 1;
+                    } else {
+                        cart.push({ id, name, price, img, quantity: 1 });
+                    }
+
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    // 可選：提示用戶或更新購物車圖標
+                    // window.location.href = '購物車.html'; // 根據需求決定是否跳轉
+                    alert(`「${name}」已加入購物車！`);
+                });
+            });
+        };
+
+        const renderPagination = (totalProducts) => {
+            const activeTabPane = document.querySelector('.tab-pane.active');
+            if (!activeTabPane) return;
+            const paginationControls = activeTabPane.querySelector('.pagination-controls');
+            paginationControls.innerHTML = '';
+            const totalPages = Math.ceil(totalProducts / productsPerPage);
+
+            if (totalPages > 1) {
+                // ... (此處省略分頁按鈕生成的程式碼，與前次相同)
+                 const prevButton = document.createElement('button');
+                prevButton.innerText = '上一頁';
+                prevButton.classList.add('btn', 'btn-outline-secondary', 'mx-1');
+                prevButton.disabled = currentPage === 1;
+                prevButton.addEventListener('click', () => {
+                    currentPage--;
+                    renderProducts();
+                });
+                paginationControls.appendChild(prevButton);
+
+                for (let i = 1; i <= totalPages; i++) {
+                    const pageButton = document.createElement('button');
+                    pageButton.innerText = i;
+                    pageButton.classList.add('btn', 'btn-outline-secondary', 'mx-1');
+                    if (i === currentPage) {
+                        pageButton.classList.add('active');
+                    }
+                    pageButton.addEventListener('click', () => {
+                        currentPage = i;
+                        renderProducts();
+                    });
+                    paginationControls.appendChild(pageButton);
+                }
+
+                const nextButton = document.createElement('button');
+                nextButton.innerText = '下一頁';
+                nextButton.classList.add('btn', 'btn-outline-secondary', 'mx-1');
+                nextButton.disabled = currentPage === totalPages;
+                nextButton.addEventListener('click', () => {
+                    currentPage++;
+                    renderProducts();
+                });
+                paginationControls.appendChild(nextButton);
+            }
+        };
+
+        const renderProducts = () => {
+            const activeTabPane = document.querySelector('.tab-pane.active');
+            if (!activeTabPane) return;
+
+            const productGrid = activeTabPane.querySelector('.product-grid');
+            productGrid.innerHTML = '';
+
+            const filteredProducts = getFilteredProducts();
+            const startIndex = (currentPage - 1) * productsPerPage;
+            const endIndex = startIndex + productsPerPage;
+            const paginatedProducts = filteredProducts.slice(startIndex, endIndex);
+
+            if (paginatedProducts.length === 0) {
+                productGrid.innerHTML = '<p class="text-center col-12">此分類暫無商品。</p>';
+            } else {
+                paginatedProducts.forEach((product, index) => {
+                    const alignClass = index % 2 === 0 ? 'flex-row' : 'flex-row-reverse';
+                    const productCard = `
+                        <div class="d-flex ${alignClass} row mb-5">
+                            <div class="image-col">
+                                <img src="${product.image}" alt="${product.name}">
+                            </div>
+                            <div class="text-col">
+                                <h3>${product.name}</h3>
+                                <p>${product.description}</p>
+                                <p class="price">NT$ ${product.price}</p>
+                                <button class="btn btn-add-to-cart"
+                                    data-id="${product.id}"
+                                    data-name="${product.name}"
+                                    data-price="${product.price}"
+                                    data-img="${product.image}">
+                                    加入購物車
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                    productGrid.innerHTML += productCard;
+                });
+            }
+
+            addCartButtonListeners();
+            renderPagination(filteredProducts.length);
+        };
+
+        categoryTabs.forEach(tab => {
+            tab.addEventListener('shown.bs.tab', function () {
+                currentPage = 1;
+                renderProducts();
+            });
+        });
+
+        // 初始載入
+        renderProducts();
+    }
+    // =============== LÜFA 商品動態載入 END ===============
 });
+
+
 // ========== 共用函式：切換 tab 並滾動到對應區域 ==========
 function activateTabAndScroll(hash) {
-    // 根據 hash 取得對應的 tab 切換按鈕（如 data-bs-target="#room1"）
     const tabTriggerEl = document.querySelector(`button[data-bs-target="${hash}"]`);
-
-    // 根據 hash 取得對應的頁面區塊元素（如 <div id="room1">）
     const targetSection = document.querySelector(hash);
 
-    // 如果找到了對應的 tab 按鈕，使用 Bootstrap 的 API 主動切換 tab
     if (tabTriggerEl) {
         new bootstrap.Tab(tabTriggerEl).show();
     }
 
-    // 如果找到了對應的內容區塊，進行平滑滾動
     if (targetSection) {
-        // 延遲一點點時間，以確保 tab 內容已經 render 出來
         setTimeout(() => {
-            targetSection.scrollIntoView({ behavior: 'smooth' }); // 使用 smooth 平滑滾動
-        }, 300); // 300ms 延遲
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+        }, 300);
     }
 }
 
 // ========== nav連結時的處理 ==========
 document.querySelectorAll('.nav-link[href^="#room"]').forEach(function (link) {
-    // 為每個符合條件的 nav-link 元素加上點擊監聽器
     link.addEventListener('click', function (e) {
-        e.preventDefault(); // 阻止超連結預設跳轉行為
-        const hash = this.getAttribute('href'); // 取得 href，例如 "#room1"
-        activateTabAndScroll(hash); // 呼叫共用函式，切換 tab 並滾動
+        e.preventDefault();
+        const hash = this.getAttribute('href');
+        activateTabAndScroll(hash);
     });
 });
+
 // ========== 從其他頁跳轉時 自動處理 hash ==========
-window.addEventListener('DOMContentLoaded', function (){
-    const hash = window.location.hash; // 取得網址中的 #hash，如 "#room2"
-    // 如果 hash 存在，且是以 #room 開頭（符合目標 tab 的條件）
+window.addEventListener('DOMContentLoaded', function () {
+    const hash = window.location.hash;
     if (hash && hash.startsWith('#room')) {
-        activateTabAndScroll(hash); // 呼叫共用函式，主動切換 tab 並滾動
+        activateTabAndScroll(hash);
     }
 });
 
 // ===增加商品到購物車========
-document.querySelectorAll('.btn-add-to-cart').forEach(btn => {
-    btn.addEventListener('click', function (){
-        const id = btn.dataset.id;
-        const name = btn.dataset.name;
-        const price = parseInt(btn.dataset.price, 10);
-        const img = btn.dataset.img;
-
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-        const existing = cart.find(item => item.id === id);
-        if (existing) {
-            existing.quantity += 1;
-        } else {
-            cart.push({ id, name, price, img, quantity: 1 });
-        }
-
-        localStorage.setItem('cart', JSON.stringify(cart));
-
-        // 跳轉到購物車頁
-        window.location.href = '購物車.html';
-    });
-});
+// 由於商品是動態載入的，舊的監聽器會失效。
+// 已將監聽器綁定邏輯移至 renderProducts 函數內的 addCartButtonListeners 中，
+// 確保每次渲染商品時，按鈕都能獲得最新的事件監聽。

@@ -170,8 +170,8 @@
             <nav class="nav nav-tabs flex-nowrap justify-content-around">
                 <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#roomA" type="button">最新飾品</button>
                 <button class="nav-link" data-bs-toggle="tab" data-bs-target="#roomB" type="button">串飾</button>
-                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#roomC" type="button">手鏈</button>
-                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#roomD" type="button">項鏈與吊墜</button>
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#roomC" type="button">手鍊</button>
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#roomD" type="button">項鍊與吊墜</button>
                 <button class="nav-link" data-bs-toggle="tab" data-bs-target="#roomE" type="button">戒指</button>
             </nav>
         </header>
@@ -179,298 +179,28 @@
         <article class="tab-content py-5">
             <!-- 第一區 -->
             <div class="tab-pane fade show active" id="roomA">
-                <!-- 產品1：圖片左 -->
-                <div class="d-flex flex-row row mb-5">
-                    <div class="image-col">
-                        <img src="./img/product/A1.jpg" alt="產品1圖">
-                    </div>
-                    <div class="text-col">
-                        <h3>產品標題 1</h3>
-                        <p>這是產品 1 的介紹內容，簡單說明商品的特色與用途。</p>
-                        <button class="btn  btn-add-to-cart " data-id="011" data-name="商品名稱 A-1" data-price="299"
-                            data-img="./img/product/A1.jpg">
-                            加入購物車
-                        </button>
-                    </div>
-                </div>
-                <!-- 產品2：圖片右 -->
-                <div class="d-flex flex-row-reverse row mb-5">
-                    <div class="image-col">
-                        <img src="./img/product/B1.jpg" alt="產品2圖">
-                    </div>
-                    <div class="text-col">
-                        <h3>產品標題 2</h3>
-                        <p>這是產品 2 的介紹內容，包含設計靈感與材質介紹。</p>
-                        <button class="btn  btn-add-to-cart " data-id="021" data-name="商品名稱 B-1" data-price="299"
-                            data-img="./img/product/B1.jpg">
-                            加入購物車
-                        </button>
-                    </div>
-                </div>
-                <!-- 產品3：圖片左 -->
-                <div class="d-flex flex-row row mb-5">
-                    <div class="image-col">
-                        <img src="./img/product/C1.jpg" alt="產品1圖">
-                    </div>
-                    <div class="text-col">
-                        <h3>產品標題 3</h3>
-                        <p>這是產品 3 的介紹內容，簡單說明商品的特色與用途。</p>
-                        <button class="btn  btn-add-to-cart " data-id="031" data-name="商品名稱 C-1" data-price="299"
-                            data-img="./img/product/C1.jpg">
-                            加入購物車
-                        </button>
-                    </div>
-                </div>
-                <!-- 產品4：圖片右 -->
-                <div class="d-flex flex-row-reverse row mb-5">
-                    <div class="image-col">
-                        <img src="./img/product/D1.jpg" alt="產品2圖">
-                    </div>
-                    <div class="text-col">
-                        <h3>產品標題 4</h3>
-                        <p>這是產品 4 的介紹內容，包含設計靈感與材質介紹。</p>
-                        <button class="btn  btn-add-to-cart " data-id="041" data-name="商品名稱 D-1" data-price="299"
-                            data-img="./img/product/D1.jpg">
-                            加入購物車
-                        </button>
-                    </div>
-                </div>
+                <div class="row product-grid"></div>
+                <div class="d-flex justify-content-center mt-4 pagination-controls"></div>
             </div>
             <!-- 第二區 -->
             <div class="tab-pane fade" id="roomB">
-                <!-- 產品1：圖片左 -->
-                <div class="d-flex flex-row row mb-5">
-                    <div class="image-col">
-                        <img src="./img/product/A1.jpg" alt="產品1圖">
-                    </div>
-                    <div class="text-col">
-                        <h3>產品標題 1</h3>
-                        <p>這是產品 1 的介紹內容，簡單說明商品的特色與用途。</p>
-                        <button class="btn  btn-add-to-cart " data-id="011" data-name="商品名稱 A-1" data-price="299"
-                            data-img="./img/product/A1.jpg">
-                            加入購物車
-                        </button>
-                    </div>
-                </div>
-                <!-- 產品2：圖片右 -->
-                <div class="d-flex flex-row-reverse row mb-5">
-                    <div class="image-col">
-                        <img src="./img/product/A2.jpg" alt="產品2圖">
-                    </div>
-                    <div class="text-col">
-                        <h3>產品標題 2</h3>
-                        <p>這是產品 2 的介紹內容，包含設計靈感與材質介紹。</p>
-                        <button class="btn  btn-add-to-cart " data-id="012" data-name="商品名稱 A-2" data-price="299"
-                            data-img="./img/product/A2.jpg">
-                            加入購物車
-                        </button>
-                    </div>
-                </div>
-                <!-- 產品3：圖片左 -->
-                <div class="d-flex flex-row row mb-5">
-                    <div class="image-col">
-                        <img src="./img/product/A3.jpg" alt="產品1圖">
-                    </div>
-                    <div class="text-col">
-                        <h3>產品標題 3</h3>
-                        <p>這是產品 3 的介紹內容，簡單說明商品的特色與用途。</p>
-                        <button class="btn  btn-add-to-cart " data-id="013" data-name="商品名稱 A-3" data-price="299"
-                            data-img="./img/product/A3.jpg">
-                            加入購物車
-                        </button>
-                    </div>
-                </div>
-                <!-- 產品4：圖片右 -->
-                <div class="d-flex flex-row-reverse row mb-5">
-                    <div class="image-col">
-                        <img src="./img/product/A4.jpg" alt="產品2圖">
-                    </div>
-                    <div class="text-col">
-                        <h3>產品標題 4</h3>
-                        <p>這是產品 4 的介紹內容，包含設計靈感與材質介紹。</p>
-                        <button class="btn  btn-add-to-cart " data-id="014" data-name="商品名稱 A-4" data-price="299"
-                            data-img="./img/product/A4.jpg">
-                            加入購物車
-                        </button>
-                    </div>
-                </div>
+                <div class="row product-grid"></div>
+                <div class="d-flex justify-content-center mt-4 pagination-controls"></div>
             </div>
             <!-- 第三區 -->
             <div class="tab-pane fade" id="roomC">
-                <!-- 產品1：圖片左 -->
-                <div class="d-flex flex-row row mb-5">
-                    <div class="image-col">
-                        <img src="./img/product/B1.jpg" alt="產品1圖">
-                    </div>
-                    <div class="text-col">
-                        <h3>產品標題 1</h3>
-                        <p>這是產品 1 的介紹內容，簡單說明商品的特色與用途。</p>
-                        <button class="btn  btn-add-to-cart " data-id="021" data-name="商品名稱 B-1" data-price="299"
-                            data-img="./img/product/B1.jpg">
-                            加入購物車
-                        </button>
-                    </div>
-                </div>
-                <!-- 產品2：圖片右 -->
-                <div class="d-flex flex-row-reverse row mb-5">
-                    <div class="image-col">
-                        <img src="./img/product/B2.jpg" alt="產品2圖">
-                    </div>
-                    <div class="text-col">
-                        <h3>產品標題 2</h3>
-                        <p>這是產品 2 的介紹內容，包含設計靈感與材質介紹。</p>
-                        <button class="btn  btn-add-to-cart " data-id="022" data-name="商品名稱 B-2" data-price="299"
-                            data-img="./img/product/B2.jpg">
-                            加入購物車
-                        </button>
-                    </div>
-                </div>
-                <!-- 產品3：圖片左 -->
-                <div class="d-flex flex-row row mb-5">
-                    <div class="image-col">
-                        <img src="./img/product/B3.jpg" alt="產品1圖">
-                    </div>
-                    <div class="text-col">
-                        <h3>產品標題 3</h3>
-                        <p>這是產品 3 的介紹內容，簡單說明商品的特色與用途。</p>
-                        <button class="btn  btn-add-to-cart " data-id="023" data-name="商品名稱 B-3" data-price="299"
-                            data-img="./img/product/B3.jpg">
-                            加入購物車
-                        </button>
-                    </div>
-                </div>
-                <!-- 產品4：圖片右 -->
-                <div class="d-flex flex-row-reverse row mb-5">
-                    <div class="image-col">
-                        <img src="./img/product/B4.jpg" alt="產品2圖">
-                    </div>
-                    <div class="text-col">
-                        <h3>產品標題 4</h3>
-                        <p>這是產品 4 的介紹內容，包含設計靈感與材質介紹。</p>
-                        <button class="btn  btn-add-to-cart " data-id="024" data-name="商品名稱 B-4" data-price="299"
-                            data-img="./img/product/B4.jpg">
-                            加入購物車
-                        </button>
-                    </div>
-                </div>
+                <div class="row product-grid"></div>
+                <div class="d-flex justify-content-center mt-4 pagination-controls"></div>
             </div>
             <!-- 第四區 -->
             <div class="tab-pane fade" id="roomD">
-                <!-- 產品1：圖片左 -->
-                <div class="d-flex flex-row row mb-5">
-                    <div class="image-col">
-                        <img src="./img/product/C1.jpg" alt="產品1圖">
-                    </div>
-                    <div class="text-col">
-                        <h3>產品標題 1</h3>
-                        <p>這是產品 1 的介紹內容，簡單說明商品的特色與用途。</p>
-                        <button class="btn  btn-add-to-cart " data-id="031" data-name="商品名稱 C-1" data-price="299"
-                            data-img="./img/product/C1.jpg">
-                            加入購物車
-                        </button>
-                    </div>
-                </div>
-                <!-- 產品2：圖片右 -->
-                <div class="d-flex flex-row-reverse row mb-5">
-                    <div class="image-col">
-                        <img src="./img/product/C2.jpg" alt="產品2圖">
-                    </div>
-                    <div class="text-col">
-                        <h3>產品標題 2</h3>
-                        <p>這是產品 2 的介紹內容，包含設計靈感與材質介紹。</p>
-                        <button class="btn  btn-add-to-cart " data-id="032" data-name="商品名稱 C-2" data-price="299"
-                            data-img="./img/product/C2.jpg">
-                            加入購物車
-                        </button>
-                    </div>
-                </div>
-                <!-- 產品3：圖片左 -->
-                <div class="d-flex flex-row row mb-5">
-                    <div class="image-col">
-                        <img src="./img/product/C3.jpg" alt="產品1圖">
-                    </div>
-                    <div class="text-col">
-                        <h3>產品標題 3</h3>
-                        <p>這是產品 3 的介紹內容，簡單說明商品的特色與用途。</p>
-                        <button class="btn  btn-add-to-cart " data-id="033" data-name="商品名稱 C-3" data-price="299"
-                            data-img="./img/product/C3.jpg">
-                            加入購物車
-                        </button>
-                    </div>
-                </div>
-                <!-- 產品4：圖片右 -->
-                <div class="d-flex flex-row-reverse row mb-5">
-                    <div class="image-col">
-                        <img src="./img/product/C4.jpg" alt="產品2圖">
-                    </div>
-                    <div class="text-col">
-                        <h3>產品標題 4</h3>
-                        <p>這是產品 4 的介紹內容，包含設計靈感與材質介紹。</p>
-                        <button class="btn  btn-add-to-cart " data-id="034" data-name="商品名稱 C-4" data-price="299"
-                            data-img="./img/product/C4.jpg">
-                            加入購物車
-                        </button>
-                    </div>
-                </div>
+                <div class="row product-grid"></div>
+                <div class="d-flex justify-content-center mt-4 pagination-controls"></div>
             </div>
             <!-- 第五區 -->
             <div class="tab-pane fade" id="roomE">
-                <!-- 產品1：圖片左 -->
-                <div class="d-flex flex-row row mb-5">
-                    <div class="image-col">
-                        <img src="./img/product/D1.jpg" alt="產品1圖">
-                    </div>
-                    <div class="text-col">
-                        <h3>產品標題 1</h3>
-                        <p>這是產品 1 的介紹內容，簡單說明商品的特色與用途。</p>
-                        <button class="btn  btn-add-to-cart " data-id="041" data-name="商品名稱 D-1" data-price="299"
-                            data-img="./img/product/D1.jpg">
-                            加入購物車
-                        </button>
-                    </div>
-                </div>
-                <!-- 產品2：圖片右 -->
-                <div class="d-flex flex-row-reverse row my-5">
-                    <div class="image-col">
-                        <img src="./img/product/D2.jpg" alt="產品2圖">
-                    </div>
-                    <div class="text-col">
-                        <h3>產品標題 2</h3>
-                        <p>這是產品 2 的介紹內容，包含設計靈感與材質介紹。</p>
-                        <button class="btn  btn-add-to-cart " data-id="042" data-name="商品名稱 D-2" data-price="299"
-                            data-img="./img/product/D2.jpg">
-                            加入購物車
-                        </button>
-                    </div>
-                </div>
-                <!-- 產品3：圖片左 -->
-                <div class="d-flex flex-row row my-5">
-                    <div class="image-col">
-                        <img src="./img/product/D3.jpg" alt="產品1圖">
-                    </div>
-                    <div class="text-col">
-                        <h3>產品標題 3</h3>
-                        <p>這是產品 3 的介紹內容，簡單說明商品的特色與用途。</p>
-                        <button class="btn  btn-add-to-cart " data-id="043" data-name="商品名稱 D-3" data-price="299"
-                            data-img="./img/product/D3.jpg">
-                            加入購物車
-                        </button>
-                    </div>
-                </div>
-                <!-- 產品4：圖片右 -->
-                <div class="d-flex flex-row-reverse row my-5">
-                    <div class="image-col">
-                        <img src="./img/product/D4.jpg" alt="產品2圖">
-                    </div>
-                    <div class="text-col">
-                        <h3>產品標題 4</h3>
-                        <p>這是產品 4 的介紹內容，包含設計靈感與材質介紹。</p>
-                        <button class="btn  btn-add-to-cart " data-id="044" data-name="商品名稱 D-4" data-price="299"
-                            data-img="./img/product/D4.jpg">
-                            加入購物車
-                        </button>
-                    </div>
-                </div>
+                <div class="row product-grid"></div>
+                <div class="d-flex justify-content-center mt-4 pagination-controls"></div>
             </div>
         </article>
     </section>
@@ -554,6 +284,7 @@
         integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
         crossorigin="anonymous"></script>
 
+    <script src="./data/products.js"></script>
     <script src="./js/主頁.js"></script>
 
 
